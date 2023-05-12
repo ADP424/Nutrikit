@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Web Assignment 0</title>
+  <meta name="description" content="NutriKit Food Planner">
+  <meta name="author" content="Aidan Dalgarno-Platt">
+
+  <script src="nutriscript.js"></script>
+  <link rel="stylesheet" href="nutristyle.css">
+</head>
+
+<body onload="setUp()">
+  <h1>
+    <b>NutriKit Food Planner</b>
+  </h1>
+  
+  <h2>
+    NutriKit allows you to select your groceries, and track your nutritional progress (good or bad)
+  </h2>
+
+  <br>
+  
+  <div class="CategoriesHolder">
+    <label class="CategoriesLabel">
+      Categories
+    </label>
+
+    <label class="MenuItemsLabel">
+      Menu Items
+    </label>
+
+    <label class="SelectedItemsLabel">
+      Selected Items
+    </label>
+
+    <br>
+
+    <select class="Categories" name="FoodCategories" size="1" onchange="setMenuItems(this)">
+      <option value=''></option>
+      <option value='Protein'>Protein</option>
+      <option value='Fruits'>Fruits</option>
+      <option value='Vegetables'>Vegetables</option>
+      <option value='Dairy'>Dairy</option>
+      <option value='Grains'>Grains</option>
+    </select>
+
+    <select class="MenuItems" id="MenuItems" Size="5" onclick="setSelectedMenuFood(this)">
+      <option>Select a category</option>
+    </select>
+
+    <button class="AddRemoveButton" type="button" id="TransferButton" onclick="transferFood()">>></button>
+
+    <select class="SelectedItems" id="SelectedItems" Size="10" onclick="setSelectedSelectedFood(this)"></select>
+
+    <br>
+
+    <label class="Calories" id="CaloriesLabel">
+      Calories: 0
+    </label>
+  </div>
+</body>
+
+</html>
